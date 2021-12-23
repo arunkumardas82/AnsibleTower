@@ -38,7 +38,7 @@ kinit administrator@AD1.${GUID_CAP}.EXAMPLE.OPENTLC.COM
 hostname
 klist
 pwd
-cd /home/arunkumar.das-wipro.com/
+cd /home/arunkumar.das/
 tail -f /var/log/secure 
 ls
 cat /etc/ansible/ansible.cfg 
@@ -101,11 +101,11 @@ cat << EOF > ad.yml
 EOF
 
 ansible-playbook ad.yml
-vi /home/arunkumar.das-wipro.com/roles/win_ad_install/tasks/main.yml
+vi /home/arunkumar.das/roles/win_ad_install/tasks/main.yml
 ansible-playbook ad.yml
-vi /home/arunkumar.das-wipro.com/roles/win_ad_install/tasks/main.yml
+vi /home/arunkumar.das/roles/win_ad_install/tasks/main.yml
 ansible-playbook ad.yml
-vi /home/arunkumar.das-wipro.com/roles/win_ad_install/tasks/main.yml
+vi /home/arunkumar.das/roles/win_ad_install/tasks/main.yml
 ls
 cat << EOF > roles/win_ad_install/tasks/main.yml
   - name: Install AD-Domain-Services feature
@@ -206,7 +206,7 @@ cat << EOF > roles/win_service_config/tasks/main.yml
 EOF
 
 ansible-playbook win_ssh_server.yml
-vi /home/arunkumar.das-wipro.com/roles/win_service_config/tasks/main.yml
+vi /home/arunkumar.das/roles/win_service_config/tasks/main.yml
 ansible-playbook win_ssh_server.yml
 cat << EOF > roles/win_service_config/tasks/main.yml
 ---
@@ -234,7 +234,7 @@ cat << EOF > roles/win_service_config/tasks/main.yml
 EOF
 
 ansible-playbook win_ssh_server.yml
-vi /home/arunkumar.das-wipro.com/roles/win_service_config/tasks/main.yml
+vi /home/arunkumar.das/roles/win_service_config/tasks/main.yml
 cd roles
 ls
 cd win_service_config/tasks
@@ -330,7 +330,7 @@ export GUID_CAP=`echo ${GUID} | tr 'a-z' 'A-Z'`
 kinit mickey@AD1.${GUID_CAP}.EXAMPLE.OPENTLC.COM
 ssh mickey@ad1.${GUID}.example.opentlc.com
 pwd
-cd /home/arunkumar.das-wipro.com/roles
+cd /home/arunkumar.das/roles
 ls
 ansible-galaxy init osp-network
 cd osp-network/tasks/
@@ -348,7 +348,7 @@ ls
 export GUID=e136
 export OSP_GUID=e136
 export MYKEY=~/.ssh/openstack.pem
-export MYUSER=arunkumar.das-wipro.com
+export MYUSER=arunkumar.das
 ansible all -i workstation-${OSP_GUID}.rhpds.opentlc.com, --private-key=~/.ssh/openstack.pem -u cloud-user -m ping
 export GUID=`hostname | awk -F"." '{print $2}'`
 echo $GUID
